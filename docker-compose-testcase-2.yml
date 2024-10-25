@@ -1,0 +1,44 @@
+services:
+  one:
+    image: prj3
+    networks:
+      - mynetwork
+    hostname: "one"
+    container_name: "one"
+    command: -h hostsfile.txt
+
+  two:
+    image: prj3
+    networks:
+      - mynetwork
+    hostname: "two"
+    container_name: "two"
+    command: -h hostsfile.txt -d 2
+
+  three:
+    image: prj3
+    networks:
+      - mynetwork
+    hostname: "three"
+    container_name: "three"
+    command: -h hostsfile.txt -d 4
+
+  four:
+    image: prj3
+    networks:
+      - mynetwork
+    hostname: "four"
+    container_name: "four"
+    command: -h hostsfile.txt -d 6
+
+  five:
+    image: prj3
+    networks:
+      - mynetwork
+    hostname: "five"
+    container_name: "five"
+    command: -h hostsfile.txt -d 8 -c 4
+
+networks:
+  # The presence of these objects is sufficient to define them
+  mynetwork: {}
